@@ -40,14 +40,13 @@ def readAsListOfDict(fileName,expression='',fieldCount=1,keyList=None,fieldDataL
     for i in range(splitOmitLines):
         returnList.append(file.readline())
     for line in file:
-        splitList=re.split(expression,line)
+        splitList=re.split(expression,line,maxsplit=fieldCount-1)
         tmpDict={}
         for i in range(fieldCount):
             tmpDict[keyList[i]]=fieldDataList[i](splitList[i])
         returnList.append(tmpDict)
 
     return returnList
-
 
 def writeSingleToFile(fileName,value):
     """Write a Single Variable to a file"""
@@ -57,5 +56,6 @@ def writeSingleToFile(fileName,value):
 if __name__=="__main__":
     #print(readAsList("_bcb5c6658381416d19b01bfc1d3993b5_IntegerArray.txt",int))
     #print([str for x in range(5)])
-    print(readAsListOfDict('_642c2ce8f3abe387bdff636d708cdb26_jobs.txt','\s+',2,['weight','length'],[int,int],1,0))
+    #print(readAsListOfDict('_642c2ce8f3abe387bdff636d708cdb26_jobs.txt','\s+',2,['weight','length'],[int,int],1,0))
+    print(readAsListOfDict('_f370cd8b4d3482c940e4a57f489a200b_kargerMinCut.txt','\s+',2))
     pass
