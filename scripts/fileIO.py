@@ -12,7 +12,6 @@ def readAsList(fileName,dataType=str):
     file=open(inputPathName+fileName,'r')
     return [dataType(line) for line in file]
 
-
 def readAsListOfDict(fileName,expression='',fieldCount=1,keyList=None,fieldDataList=None,omitLines=0,splitOmitLines=0):
     """return the file content as List of Dictionary where line is split based on a regular expression"""
     if keyList==None:
