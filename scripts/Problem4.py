@@ -131,5 +131,5 @@ def getStronglyConnectedComponents(edgesList):
 
 
 if __name__=="__main__":
-    inputList = readAsListOfDict('SCC.txt','\s+',2,fieldDataList=[int,int])
+    inputList = readAsListOfDict('_410e934e6553ac56409b2cb7096a44aa_SCC.txt','\s+',2,fieldDataList=[int,int])
     writeSingleToFile('Problem4.txt',','.join([str(i) for i in  getStronglyConnectedComponents(inputList)[0:5]]))
